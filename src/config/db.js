@@ -12,11 +12,11 @@ export const connectDB = () => {
     const dbUrl = process.env.DATABASE_URL;
     const parsedUrl = new URL(dbUrl);
     connection = mysql.createConnection({
-        host: process.env.MYSQLHOST || parsedUrl.hostname ,
-        user: process.env.MYSQLUSER || parsedUrl.username,
-        password: process.env.MYSQLPASSWORD || password ,
-        database: process.env.MYSQLDATABASE || parsedUrl.pathname.replace("/", ""),
-        port: process.env.MYSQLPORT || parsedUrl.port
+        host:  parsedUrl.hostname ,
+        user:  parsedUrl.username,
+        password:  password ,
+        database:  parsedUrl.pathname.replace("/", ""),
+        port:  parsedUrl.port
     });
 
     connection.connect((err) => {
