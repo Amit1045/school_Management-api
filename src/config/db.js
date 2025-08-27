@@ -1,9 +1,7 @@
 import mysql from "mysql2";
 import dotenv from "dotenv";
-// import url from "url"
 
 dotenv.config({ path: "./.env" });
-console.log(process.env.MYSQLDATABASE);
 
 let connection;
 
