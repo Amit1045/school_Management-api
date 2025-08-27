@@ -9,15 +9,7 @@ let connection;
 
 export const connectDB = () => {
   try {
-    const dbUrl = process.env.DATABASE_URL;
-    const parsedUrl = new URL(dbUrl);
-    connection = mysql.createConnection({
-        host:  parsedUrl.hostname ,
-        user:  parsedUrl.username,
-        password:  password ,
-        database:  parsedUrl.pathname.replace("/", ""),
-        port:  parsedUrl.port
-    });
+    connection = mysql.createConnection(process.env.DATABASE_URL);
 
     connection.connect((err) => {
       if (err) {
