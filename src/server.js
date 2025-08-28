@@ -7,7 +7,8 @@ const app = express();
 app.use(express.json());
 
 app.use(bodyParser.json());
-app.use("/api",getRoute);
+
+app.use("/",getRoute);
 
 app.listen(3000, () => {
   connectDB();

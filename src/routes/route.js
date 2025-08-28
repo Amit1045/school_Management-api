@@ -2,7 +2,6 @@ import express from "express"
 import { connection } from "../config/db.js"; 
 const router = express.Router()
 
-
 router.get("/listSchools",(req, res) => {
     const { latitude, longitude } = req.query;
   

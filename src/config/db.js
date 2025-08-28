@@ -3,12 +3,13 @@ import dotenv from "dotenv";
 
 dotenv.config({ path: "./.env" });
 
+console.log(process.env.DATABASE_URL);
+
 let connection;
 
 export const connectDB = () => {
   try {
     connection = mysql.createConnection(process.env.DATABASE_URL);
-
     connection.connect((err) => {
       if (err) {
         console.error("DB Connection Failed:", err);
